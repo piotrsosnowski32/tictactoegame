@@ -1,4 +1,4 @@
-import game
+from game import play_game
 
 computer_figure = ""
 player_figure = ""
@@ -13,4 +13,4 @@ while computer_figure == "":
         computer_figure = "x"
 
 
-game.play_game(player_figure, computer_figure)
+play_game(player_figure, computer_figure)
