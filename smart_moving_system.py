@@ -18,10 +18,10 @@ def smart_move(player_position, player_figure):
 
 def first_move(player_position, player_figure):
     if player_position == 5:
-        ab = random.randint(1, 9)
+        a = random.randint(1, 9)
     else:
-        ab = 5
-    return ab
+        a = 5
+    return a
 
 
 # sprawdzenie pól przeciwnika
