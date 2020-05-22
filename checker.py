@@ -18,6 +18,7 @@ def check():
     tie()
 
 
+
 def line():
 
     line_1 = game.board[0] == game.board[1] == game.board[2] != "-"

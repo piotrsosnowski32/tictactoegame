@@ -1,4 +1,4 @@
-import random
+import smart_moving_system
 import checker
 
 
@@ -11,9 +11,9 @@ def play_game(player_figure, computer_figure):
     display_board()
 
     while True:
-        player_move(player_figure)
-
+        player_position = player_move(player_figure)
         checker.check()
+
         if checker.check() == 1:
             print(f"{player_figure} wins.")
             break
@@ -23,9 +23,9 @@ def play_game(player_figure, computer_figure):
                 print("Tie.")
                 break
 
-        computer_move(computer_figure)
-
+        computer_move(computer_figure, player_figure)
         checker.check()
+
         if checker.check() == 1:
             print(f"{computer_figure} wins.")
             break
@@ -57,16 +57,13 @@ def player_move(player_figure):
             i = 0
 
 
-def computer_move(computer_figure):
+def computer_move(computer_figure, player_figure):
     i = 0
     while i == 0:
-        computer_position = random.randint(1, 9)
+        computer_position = smart_moving_system.smart_move(player_figure)
         if board[computer_position - 1] == "-":
             board[computer_position - 1] = computer_figure
             i = 1
             display_board()
         else:
             i = 0
-
-
-
