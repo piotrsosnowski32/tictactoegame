@@ -28,22 +28,22 @@ def first_move(player_figure):
 
 def other_moves(player_figure):
     status = column(player_figure)
-    if status == 0:
+    if status == None:
         status = line(player_figure)
-        if status == 0:
+        if status == None:
             status = diagonal_1(player_figure)
-            if status == 0:
+            if status == None:
                 status = diagonal_2(player_figure)
-                if status == 0:
+                if status == None:
                     status = random.randint(1, 9)
 
     return status
 
 
 def column(player_figure):
-    counter = 0
     i = 0
-    move = 0
+    counter = 0
+    move = None
     for line_cell in range(2):
         for column_cell in range(2):
             if game.board[i] == player_figure:
@@ -51,8 +51,8 @@ def column(player_figure):
             else:
                 move = i + 1
             i += 3
-            if counter == 2:
-                return move
+        if counter == 2:
+            return move
         counter = 0
         i -= 5
 
@@ -60,7 +60,7 @@ def column(player_figure):
 def line(player_figure):
     counter = 0
     i = 0
-    move = 0
+    move = None
     for column_cell in range(2):
         for line_cell in range(2):
             if game.board[i] == player_figure:
@@ -77,7 +77,7 @@ def line(player_figure):
 def diagonal_1(player_figure):
     counter = 0
     i = 0
-    move = 0
+    move = None
     for cell in range(2):
         if game.board[i] == player_figure:
             counter += 1
@@ -92,7 +92,7 @@ def diagonal_1(player_figure):
 def diagonal_2(player_figure):
     counter = 0
     i = 2
-    move = 0
+    move = None
     for cell in range(2):
         if game.board[i] == player_figure:
             counter += 1
