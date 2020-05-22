@@ -1,3 +1,3 @@
 # tictactoegame
 
-smart moving system is prototype yet.
+smart moving system is just prototype
