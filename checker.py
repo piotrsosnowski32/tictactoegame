@@ -4,7 +4,7 @@ import game
 def check():
 
     line()
-    if line() == game.board[0] or line == game.board[3] or line == game.board[6]:
+    if line() == game.board[0] or line() == game.board[3] or line() == game.board[6]:
         return 1
 
     column()

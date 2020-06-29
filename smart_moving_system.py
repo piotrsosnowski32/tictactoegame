@@ -10,7 +10,6 @@ def smart_move(player_figure):
 
     if counter == 1:
         move = first_move(player_figure)
-
     else:
         move = other_moves(player_figure)
 
@@ -44,15 +43,21 @@ def column(player_figure):
     i = 0
     counter = 0
     move = None
-    for line_cell in range(2):
-        for column_cell in range(2):
+    for line_cell in range(3):
+        for column_cell in range(3):
+
             if game.board[i] == player_figure:
                 counter += 1
-            else:
+
+            if game.board[i] == "-":
                 move = i + 1
-            i += 3
-        if counter == 2:
-            return move
+
+            if i < 6:
+                i += 3
+
+            if counter == 2:
+                return move
+
         counter = 0
         i -= 5
 
@@ -61,49 +66,60 @@ def line(player_figure):
     counter = 0
     i = 0
     move = None
-    for column_cell in range(2):
-        for line_cell in range(2):
+    for column_cell in range(3):
+        for line_cell in range(3):
             if game.board[i] == player_figure:
                 counter += 1
-            else:
+
+            if game.board[i] == "-":
                 move = i + 1
-            i += 1
+
             if counter == 2:
                 return move
+
+            i += 1
+
         counter = 0
-        i += 1
 
 
 def diagonal_1(player_figure):
     counter = 0
     i = 0
     move = None
-    for cell in range(2):
+    for cell in range(3):
+
         if game.board[i] == player_figure:
             counter += 1
-        else:
-            move = i + 1
-        i += 4
 
-        if counter == 2:
-            return move
+        if game.board[i] == "-":
+            move = i + 1
+
+        if i < 7:
+            i += 4
+
+    if counter == 2:
+        return move
 
 
 def diagonal_2(player_figure):
     counter = 0
     i = 2
     move = None
-    for cell in range(2):
+    for cell in range(3):
+
         if game.board[i] == player_figure:
             counter += 1
-        else:
+
+        if game.board[i] == "-":
             move = i + 1
-        i += 2
 
-        if counter == 2:
-            return move
+        if i < 7:
+            i += 2
 
+    if counter == 2:
+        return move
 
+# wypierdala sie przy checku dla komputera i przy wyborze pola za pomocą SMS
 
 
 
