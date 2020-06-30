@@ -34,6 +34,7 @@ def other_moves(player_figure):
             if status == None:
                 status = diagonal_2(player_figure)
                 if status == None:
+                    print("nie sms")
                     status = random.randint(1, 9)
 
     return status
@@ -119,7 +120,7 @@ def diagonal_2(player_figure):
     if counter == 2:
         return move
 
-# wypierdala sie przy checku dla komputera i przy wyborze pola za pomocą SMS
+# w sprawdzaniu kolumn, wierszy i skosów nie działa liczenie chyba
 
 
 
