@@ -34,9 +34,7 @@ def other_moves(player_figure):
             if status == None:
                 status = diagonal_2(player_figure)
                 if status == None:
-                    print("nie sms")
                     status = random.randint(1, 9)
-
     return status
 
 
@@ -46,18 +44,18 @@ def column(player_figure):
     move = None
     for line_cell in range(3):
         for column_cell in range(3):
-
             if game.board[i] == player_figure:
                 counter += 1
 
             if game.board[i] == "-":
                 move = i + 1
+                print(move)
 
-            if i < 6:
+            if i < 7:
                 i += 3
 
-            if counter == 2:
-                return move
+        if counter == 2:
+            return move
 
         counter = 0
         i -= 5
@@ -75,10 +73,11 @@ def line(player_figure):
             if game.board[i] == "-":
                 move = i + 1
 
-            if counter == 2:
-                return move
+            if i < 7:
+                i += 1
 
-            i += 1
+        if counter == 2:
+            return move
 
         counter = 0
 
@@ -120,7 +119,8 @@ def diagonal_2(player_figure):
     if counter == 2:
         return move
 
-# w sprawdzaniu kolumn, wierszy i skosów nie działa liczenie chyba
+
+
 
 
 
