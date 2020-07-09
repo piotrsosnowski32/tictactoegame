@@ -53,7 +53,7 @@ def player_move(player_figure):
                 i = 0
                 print("pole zajęte")
                 display_board()
-        except ValueError:
+        except ValueError and IndexError:
             i = 0
 
 
